@@ -20,7 +20,8 @@ build:
 
 requirements:
   build:
-   - {{ compiler('c') }}
+   - {{ compiler('c') }}  [linux]
+   - clang 9.0.1          [osx]
    - flex
    - bison
 #   - yaml
