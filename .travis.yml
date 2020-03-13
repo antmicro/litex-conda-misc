@@ -14,15 +14,11 @@ jobs:
      os: linux
      dist: xenial
      env:
-     - PACKAGE=dtc
+     - PACKAGE=wishbone-tool
    - stage: "Miscellaneus"
      os: osx
      env:
-     - PACKAGE=dtc      CONDA_CHANNELS=conda-forge
-   # - stage: "Miscellaneus"
-   #   os: windows
-   #   env:
-   #   - PACKAGE=dtc
+     - PACKAGE=wishbone-tool
   fast_finish: true
 
 before_install:
