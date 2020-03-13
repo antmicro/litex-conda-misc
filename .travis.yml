@@ -39,6 +39,6 @@ after_failure:
 after_success:
  - bash $TRAVIS_BUILD_DIR/.travis/after_success.sh
 
-cache:
-  directories:
-   - $HOME/.conda/pkgs
+# cache:
+#   directories:
+#    - $HOME/.conda/pkgs
