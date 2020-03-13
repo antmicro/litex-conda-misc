@@ -22,11 +22,15 @@ requirements:
   build:
    - {{ compiler('c') }}  [linux]
    - clang 9.0.1          [osx]
-   - flex
-   - bison
+   - flex       [not win]
+   - m2-flex     [win]
+   - bison  [not win]
+   - m2-make  [win]
+   - m2-bison [win]
 #   - yaml
    # Python bindings
-   - pkg-config
+   - pkg-config        [not win]
+   - m2w64-pkg-config  [win]
    - swig
    - python {{ python }}
   host:
