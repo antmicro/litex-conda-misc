@@ -3,4 +3,4 @@
 cd wishbone-tool
 cargo build --release
 
-copy target/release/wishbone-tool %PREFIX%/Library/
+copy target\release\wishbone-tool.exe %PREFIX%\Library\bin\wishbone-tool.exe
