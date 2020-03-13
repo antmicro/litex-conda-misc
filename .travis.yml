@@ -19,6 +19,10 @@ jobs:
      os: osx
      env:
      - PACKAGE=wishbone-tool
+   - stage: "Miscellaneus"
+     os: windows
+     env:
+     - PACKAGE=wishbone-tool
   fast_finish: true
 
 before_install:
