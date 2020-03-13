@@ -25,7 +25,7 @@ requirements:
    - flex       [not win]
    - m2-flex     [win]
    - bison  [not win]
-   - m2-make  [win]
+   - m2-base [win]
    - m2-bison [win]
 #   - yaml
    # Python bindings
