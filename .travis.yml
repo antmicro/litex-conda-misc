@@ -10,19 +10,12 @@ stages:
 jobs:
   include:
  # Miscellaneus
-   - stage: "Miscellaneus"
-     os: linux
-     dist: xenial
-     env:
-     - PACKAGE=dtc
-   - stage: "Miscellaneus"
-     os: osx
-     env:
-     - PACKAGE=dtc      CONDA_CHANNELS=conda-forge
-   # - stage: "Miscellaneus"
-   #   os: windows
-   #   env:
-   #   - PACKAGE=dtc
+    - stage: "Miscellaneus"
+      os: linux
+      dist: xenial
+      env:
+      - PACKAGE=renode
+      - CONDA_CHANNELS=conda-forge
   fast_finish: true
 
 before_install:
