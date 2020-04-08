@@ -43,7 +43,7 @@ else
     cp /usr/lib/libc.dylib $PREFIX/lib/
 fi
 
-./build.sh
+./build.sh --no-gui
 
 mkdir -p $PREFIX/opt/renode/bin
 mkdir -p $PREFIX/opt/renode/scripts
