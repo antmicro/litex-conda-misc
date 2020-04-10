@@ -15,7 +15,7 @@ else
     	$SPACER
 
     	start_section "package.upload" "${GREEN}Package uploading...${NC}"
-    	anaconda -t $ANACONDA_TOKEN upload --user $ANACONDA_USER --label main $CONDA_OUT
+    	anaconda -t $ANACONDA_TOKEN upload --force --user $ANACONDA_USER --label main $CONDA_OUT
     	end_section "package.upload"
     else
         echo "Conditions unmet, will not upload"
