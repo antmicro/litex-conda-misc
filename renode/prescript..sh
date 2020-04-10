@@ -14,10 +14,11 @@ cd ..
 cat meta.yaml
 mv renode/tools/packaging/conda/* .
 
-sed -i 's/name: renode/name: renode-travis/' meta.yaml
-sed -i "s/{{GIT_DESCRIBE_TAG}}/$DESCRIBE_TAG/" meta.yaml
-sed -i 's/git_url: .*/path: renode/' meta.yaml
-sed -i 's/git_rev: /# git_rev: /' meta.yaml
+sed -i.b 's/name: renode/name: renode-travis/' meta.yaml
+sed -i.b "s/{{GIT_DESCRIBE_TAG}}/$DESCRIBE_TAG/" meta.yaml
+sed -i.b 's/git_url: .*/path: renode/' meta.yaml
+sed -i.b 's/git_rev: /# git_rev: /' meta.yaml
+rm meta.yaml.b
 patch meta.yaml meta_requirements.patch
 patch build.sh build_without_gui.patch
 
