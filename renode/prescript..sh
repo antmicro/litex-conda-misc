@@ -18,7 +18,7 @@ sed -i 's/name: renode/name: renode-travis/' meta.yaml
 sed -i "s/{{GIT_DESCRIBE_TAG}}/$DESCRIBE_TAG/" meta.yaml
 sed -i 's/git_url: .*/path: renode/' meta.yaml
 sed -i 's/git_rev: /# git_rev: /' meta.yaml
-patch meta.yaml meta_python_2.7.patch
+patch meta.yaml meta_requirements.patch
 patch build.sh build_without_gui.patch
 
 cat meta.yaml

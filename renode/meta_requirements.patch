@@ -1,0 +1,14 @@
+13c13
+<         - python
+---
+>         - python =2.7
+24c24
+<         - python
+---
+>         - python =2.7
+32a33,37
+>         - robotframework
+>         - netifaces
+>         - requests
+>         - psutil
+>         - pyyaml
