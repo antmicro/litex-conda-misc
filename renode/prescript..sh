@@ -21,6 +21,7 @@ sed -i.b 's/git_rev: /# git_rev: /' meta.yaml
 rm meta.yaml.b
 patch meta.yaml meta_requirements.patch
 patch build.sh build_without_gui.patch
+patch renode/tools/common.sh tools_common.patch
 
 cat meta.yaml
 
