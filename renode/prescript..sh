@@ -23,6 +23,7 @@ rm meta.yaml.bak
 patch build.sh build_without_gui.patch
 patch renode/build.sh verbose_build.patch
 patch renode/tools/common.sh tools_common.patch
+patch bld.bat add_msbuilds-path_in_bld.patch
 
 cat meta.yaml
 
