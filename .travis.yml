@@ -11,15 +11,6 @@ jobs:
   include:
  # Miscellaneus
    - stage: "Miscellaneus"
-     os: linux
-     dist: xenial
-     env:
-     - PACKAGE=wishbone-tool
-   - stage: "Miscellaneus"
-     os: osx
-     env:
-     - PACKAGE=wishbone-tool
-   - stage: "Miscellaneus"
      os: windows
      env:
      - PACKAGE=wishbone-tool
