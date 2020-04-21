@@ -14,6 +14,7 @@ cd ..
 cat meta.yaml
 mv renode/tools/packaging/conda/* .
 
+patch meta.yaml win-python-version.patch
 sed -i.bak 's/name: renode/name: renode-travis/' meta.yaml
 sed -i.bak "s/{{GIT_DESCRIBE_TAG}}/$DESCRIBE_TAG/" meta.yaml
 sed -i.bak 's/git_url: .*/path: renode/' meta.yaml
@@ -25,5 +26,3 @@ patch renode/tools/common.sh tools_common.patch
 cat meta.yaml
 
 ls -l
-
-conda config --add channels conda-forge

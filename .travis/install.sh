@@ -14,7 +14,7 @@ conda config --set always_yes yes --set changeps1 no
 conda install pexpect
 conda config --add channels litex-hub
 conda config --add channels antmicro
-for CHANNEL in $CONDA_CHANNELS; do
+for CHANNEL in $ADD_CHANNELS; do
 	conda config --add channels $CHANNEL
 done
 conda config --add channels $(echo $TRAVIS_REPO_SLUG | sed -e's@/.*$@@')
