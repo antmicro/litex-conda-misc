@@ -1,4 +1,2 @@
-3c3
-< set PATH=C:\cygwin64\bin\;%PATH%
----
-> set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
+3a4
+> set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;C:\Program Files (x86)\MSBuild\15.0\Bin;%PATH%
