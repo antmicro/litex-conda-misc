@@ -1,2 +1,8 @@
-3a4
-> set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;C:\Program Files (x86)\MSBuild\15.0\Bin;%PATH%
+1c1
+< @echo off
+---
+> @echo on
+5a6,8
+> 
+> for /F "usebackq tokens=*" %%i in (`vswhere -latest -requires Microsoft.Component.MSBuild -find MSBuild\**\Bin\MSBuild.exe -property installationPath`) do (set MSBUILDDIR=%%i )
+> set PATH=%MSBUILDDIR%;%PATH%
