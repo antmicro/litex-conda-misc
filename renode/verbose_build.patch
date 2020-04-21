@@ -3,4 +3,4 @@
 176c177
 < $CS_COMPILER /p:Configuration=Release "`get_path \"$ROOT_PATH/lib/cctask/CCTask.sln\"`" > /dev/null
 ---
-> $CS_COMPILER /p:Configuration=Release "$ROOT_PATH/lib/cctask/CCTask.sln"
+> $CS_COMPILER '/p:Configuration=Release' "$ROOT_PATH/lib/cctask/CCTask.sln"
