@@ -19,6 +19,7 @@ for CHANNEL in $CONDA_CHANNELS; do
 done
 conda config --add channels $(echo $TRAVIS_REPO_SLUG | sed -e's@/.*$@@')
 #conda clean -s --dry-run
+echo -e "${RED}BEFORE CONDA_BUILD_PURGE${NC}"
 conda build purge
 #conda clean -s --dry-run
 

@@ -25,3 +25,5 @@ patch renode/tools/common.sh tools_common.patch
 cat meta.yaml
 
 ls -l
+
+conda config --add channels conda-forge

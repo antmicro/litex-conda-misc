@@ -21,7 +21,7 @@ jobs:
       os: windows
       env:
       - PACKAGE=renode
-      - CONDA_CHANNELS=conda-forge
+ #      - CONDA_CHANNELS=conda-forge
       - UPLOAD=no-upload
  #    - stage: "Miscellaneus"
  #      os: osx
