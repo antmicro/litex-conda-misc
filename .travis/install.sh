@@ -2,6 +2,7 @@
 
 source $TRAVIS_BUILD_DIR/.travis/common.sh
 set -e
+set -x
 
 # Getting the conda environment
 start_section "environment.conda" "Setting up basic ${YELLOW}conda environment${NC}"
@@ -21,6 +22,7 @@ conda config --add channels $(echo $TRAVIS_REPO_SLUG | sed -e's@/.*$@@')
 conda build purge
 #conda clean -s --dry-run
 
+echo -e "${RED}BEFORE SOURCING CONDA_META_EXTRA${NC}"
 ./conda-meta-extra.sh
 
 end_section "environment.conda"

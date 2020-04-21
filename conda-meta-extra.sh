@@ -1,6 +1,9 @@
 #!/bin/bash
 TOP=$(pwd)
 
+set -x
+echo -e "${RED}CONDA_META_EXTRA IS SOURCED${NC}"
+
 cat > recipe_append.yaml <<EOF
 extra:
   maintainers:
@@ -23,13 +26,15 @@ if [ ! -z "${TOOLCHAIN_ARCH}" ]; then
 EOF
 fi
 
+echo -e "${RED}BEFORE LINKING RECIPE_APPEND WITH PYTHON${NC}"
 for meta in $(find -name meta.yaml); do
 	(
 		cd $(dirname $meta);
-		if [ "$TRAVIS_OS_NAME" != 'windows' ]; then
+		if [ $TRAVIS_OS_NAME != 'windows' ]; then
 			ln -sf $(python3 -c "import os.path; print(os.path.relpath('$TOP/recipe_append.yaml'))") recipe_append.yaml
 		else
 			ln -sf $(python -c "import os.path; path=os.path.abspath('$TOP/recipe_append.yaml'); print(path[:2] + path[4:])") recipe_append.yaml
 		fi
 	)
 done
+echo -e "${RED}AFTER LINKING RECIPE_APPEND WITH PYTHON${NC}"

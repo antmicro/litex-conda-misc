@@ -10,26 +10,26 @@ stages:
 jobs:
   include:
  # Miscellaneus
-    - stage: "Miscellaneus"
-      os: linux
-      dist: xenial
-      env:
-      - PACKAGE=renode
-      - CONDA_CHANNELS=conda-forge
-      - UPLOAD=no-upload
+ #    - stage: "Miscellaneus"
+ #      os: linux
+ #      dist: xenial
+ #      env:
+ #      - PACKAGE=renode
+ #      - CONDA_CHANNELS=conda-forge
+ #      - UPLOAD=no-upload
     - stage: "Miscellaneus"
       os: windows
       env:
       - PACKAGE=renode
       - CONDA_CHANNELS=conda-forge
       - UPLOAD=no-upload
-    - stage: "Miscellaneus"
-      os: osx
-      osx_image: xcode8.3
-      env:
-      - PACKAGE=renode
-      - CONDA_CHANNELS=conda-forge
-#      - UPLOAD=no-upload
+ #    - stage: "Miscellaneus"
+ #      os: osx
+ #      osx_image: xcode8.3
+ #      env:
+ #      - PACKAGE=renode
+ #      - CONDA_CHANNELS=conda-forge
+ #      - UPLOAD=no-upload
   fast_finish: true
 
 before_install:
