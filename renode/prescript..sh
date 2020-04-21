@@ -21,6 +21,7 @@ sed -i.bak 's/git_url: .*/path: renode/' meta.yaml
 sed -i.bak 's/git_rev: /# git_rev: /' meta.yaml
 rm meta.yaml.bak
 patch build.sh build_without_gui.patch
+patch renode/build.sh verbose_build.patch
 patch renode/tools/common.sh tools_common.patch
 
 cat meta.yaml
