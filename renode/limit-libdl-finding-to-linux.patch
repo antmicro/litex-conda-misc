@@ -1,0 +1,4 @@
+5c5
+< if ( ! [ -e $CONDA_PREFIX/lib/libdl.so ] ) && [ `whereis libdl | grep 'libdl\.so' | wc -l` -eq 0 ] ; then
+---
+> if [[ `uname` == "Linux" ]] && ( ! [ -e $CONDA_PREFIX/lib/libdl.so ] ) && [ `whereis libdl | grep 'libdl\.so' | wc -l` -eq 0 ] ; then
