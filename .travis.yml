@@ -14,15 +14,7 @@ jobs:
      os: linux
      dist: xenial
      env:
-     - PACKAGE=dtc
-   - stage: "Miscellaneus"
-     os: osx
-     env:
-     - PACKAGE=dtc      CONDA_CHANNELS=conda-forge
-   # - stage: "Miscellaneus"
-   #   os: windows
-   #   env:
-   #   - PACKAGE=dtc
+     - PACKAGE=sigrok-cli   CONDA_CHANNELS=conda-forge
   fast_finish: true
 
 before_install:
