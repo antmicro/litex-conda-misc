@@ -28,11 +28,6 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - python {{ python }}
-    - pkg-config
-    - libusb
-    - libzip
-    - glib
-    - glibmm
     # C++ bindings
     - doxygen
     # Python bindings
@@ -42,17 +37,21 @@ requirements:
     - pkg-config
     - libzip
     - glib
+    - libusb <=1.0.20
+    - libftdi
+    - check
     # C++ bindings
     - glibmm
-    - libsigcpp
+    - libsigcpp =2
     # Python bindings
     - pygobject
     - numpy
   run:
     - python {{ python }}
     - libzip
-    - libsigcpp
     - glibmm
+    - libusb <=1.0.20
+    - libftdi
 
 about:
   home: http://sigrok.org/
