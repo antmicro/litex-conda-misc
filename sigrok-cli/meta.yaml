@@ -1,5 +1,5 @@
 package:
-  name: sigrok-cli
+  name: sigrok-cli_with_libudev
   version: {{ GIT_FULL_HASH }}
 
 source:
@@ -28,6 +28,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - python {{ python }}
+    - {{ cdt('libudev-devel') }}
     # C++ bindings
     - doxygen
     # Python bindings
