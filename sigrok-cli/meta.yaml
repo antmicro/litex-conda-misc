@@ -37,7 +37,7 @@ requirements:
     - pkg-config
     - libzip
     - glib
-    - libusb <=1.0.20
+    - libusb
     - libftdi
     - check
     # C++ bindings
@@ -50,7 +50,7 @@ requirements:
     - python {{ python }}
     - libzip
     - glibmm
-    - libusb <=1.0.20
+    - libusb
     - libftdi
 
 about:

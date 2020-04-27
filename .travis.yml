@@ -14,7 +14,7 @@ jobs:
      os: linux
      dist: xenial
      env:
-     - PACKAGE=sigrok-cli
+     - PACKAGE=sigrok-cli   CONDA_CHANNELS=conda-forge
   fast_finish: true
 
 before_install:
