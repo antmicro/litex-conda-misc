@@ -27,12 +27,11 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - python {{ python }}
+    - pkg-config
     # C++ bindings
     - doxygen
   host:
     - python {{ python }}
-    - pkg-config
     - libzip
     - glib
     - libusb <=1.0.20
