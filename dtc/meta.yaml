@@ -20,17 +20,17 @@ build:
 
 requirements:
   build:
-   - {{ compiler('c') }}  [linux]
-   - clang                [osx]
-   - flex       [not win]
-   - bison  [not win]
-   # Python bindings
-   - pkg-config        [not win]
+    - {{ compiler('c') }}  [linux]
+    - clang                [osx]
+    - flex
+    - bison
+    - pkg-config
   host:
-   - swig
-   - python {{ python }}
+    # Python bindings
+    - python {{ python }}
+    - swig
   run:
-   - python {{ python }}
+    - python {{ python }}
 
 test:
   imports:
