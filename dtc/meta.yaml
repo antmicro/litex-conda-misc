@@ -26,9 +26,9 @@ requirements:
    - bison  [not win]
    # Python bindings
    - pkg-config        [not win]
-   - python {{ python }}
   host:
    - swig
+   - python {{ python }}
   run:
    - python {{ python }}
 
