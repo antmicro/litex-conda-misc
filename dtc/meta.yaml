@@ -20,7 +20,8 @@ build:
 
 requirements:
   build:
-   - {{ compiler('c') }}  [not win]
+   - {{ compiler('c') }}  [linux]
+   - clang                [osx]
    - flex       [not win]
    - bison  [not win]
    # Python bindings
