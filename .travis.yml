@@ -11,18 +11,9 @@ jobs:
   include:
  # Miscellaneus
    - stage: "Miscellaneus"
-     os: linux
-     dist: xenial
-     env:
-     - PACKAGE=dtc
-   - stage: "Miscellaneus"
      os: osx
      env:
      - PACKAGE=dtc      CONDA_CHANNELS=conda-forge
-   # - stage: "Miscellaneus"
-   #   os: windows
-   #   env:
-   #   - PACKAGE=dtc
   fast_finish: true
 
 before_install:
@@ -43,6 +34,6 @@ after_failure:
 after_success:
  - bash $TRAVIS_BUILD_DIR/.travis/after_success.sh
 
-# cache:
-#   directories:
-#    - $HOME/.conda/pkgs
+cache:
+  directories:
+   - $HOME/.conda/pkgs
