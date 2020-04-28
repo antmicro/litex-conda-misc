@@ -1,5 +1,5 @@
 package:
-  name: sigrok-cli_with_libudev
+  name: sigrok-cli
   version: {{ GIT_FULL_HASH }}
 
 source:
@@ -28,17 +28,14 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - python {{ python }}
-    - {{ cdt('libudev-devel') }}
     # C++ bindings
     - doxygen
-    # Python bindings
-    - swig
   host:
     - python {{ python }}
     - pkg-config
     - libzip
     - glib
-    - libusb
+    - libusb <=1.0.20
     - libftdi
     - check
     # C++ bindings
@@ -47,11 +44,12 @@ requirements:
     # Python bindings
     - pygobject
     - numpy
+    - swig
   run:
     - python {{ python }}
     - libzip
     - glibmm
-    - libusb
+    - libusb <=1.0.20
     - libftdi
 
 about:
