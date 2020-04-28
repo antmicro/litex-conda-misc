@@ -52,6 +52,10 @@ requirements:
     - libusb <=1.0.20
     - libftdi
 
+test:
+  commands:
+    - sigrok-cli -V
+
 about:
   home: http://sigrok.org/
   license: GPLv3
