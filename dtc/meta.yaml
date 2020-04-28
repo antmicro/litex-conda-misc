@@ -29,7 +29,6 @@ requirements:
    - python {{ python }}
   host:
    - swig
-   - python {{ python }}
   run:
    - python {{ python }}
 
