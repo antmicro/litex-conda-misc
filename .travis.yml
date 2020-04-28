@@ -5,12 +5,12 @@ addons:
     packages:
     update: false
 stages:
-  - "Miscellaneus"
+  - "Miscellaneous"
 
 jobs:
   include:
- # Miscellaneus
-   - stage: "Miscellaneus"
+  # Miscellaneous
+   - stage: "Miscellaneous"
      os: osx
      env:
      - PACKAGE=dtc      CONDA_CHANNELS=conda-forge
