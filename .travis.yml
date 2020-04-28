@@ -13,7 +13,7 @@ jobs:
    - stage: "Miscellaneous"
      os: osx
      env:
-     - PACKAGE=dtc      CONDA_CHANNELS=conda-forge
+     - PACKAGE=dtc
   fast_finish: true
 
 before_install:
