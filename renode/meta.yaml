@@ -7,6 +7,9 @@ source:
     git_rev: master
     patches:
         - lower_mono_version.patch [not win]
+        # Travis-specific patches
+        - tools_common.patch       [osx]
+        - msbuild_parameters.patch [win]
 
 build:
     missing_dso_whitelist:
