@@ -8,33 +8,44 @@ source:
     patches:
         - lower_mono_version.patch [not win]
 
+build:
+    missing_dso_whitelist:
+        # Standard .NET library
+        - "$SYSROOT/System32/mscoree.dll" [win]
+
 requirements:
     build:
-        - python =2.7
-        - git
-        - automake [not win]
-        - autoconf [not win]
-        - libtool  [not win]
         - {{ compiler('cxx') }}
         - {{ compiler('c') }}
-        - mono [not win]
-        - gtk2 [not win]
-        - vc >=10 [win]
+        - git
+        - python =2.7    [not win]
+        - python         [win]
+        - automake       [not win]
+        - autoconf       [not win]
+        - libtool        [not win]
+        - mono           [not win]
+        - gtk2           [not win]
+        - vc >=10        [win]
     run:
-        - python =2.7
-        - glib [not win]
-        - mono [not win]
-        - gtk2 [not win]
-        - pcre [not win]
-        - cairo [not win]
-        - pango [not win]
-        - atk [not win]
-        - fontconfig [not win]
+        - python =2.7    [not win]
+        - python         [win]
+        - glib           [not win]
+        - mono           [not win]
+        - gtk2           [not win]
+        - pcre           [not win]
+        - cairo          [not win]
+        - pango          [not win]
+        - atk            [not win]
+        - fontconfig     [not win]
         - robotframework
         - netifaces
         - requests
         - psutil
         - pyyaml
+
+test:
+    commands:
+        - renode --help
 
 about:
     home: https://github.com/renode/renode
