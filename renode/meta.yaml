@@ -1,0 +1,42 @@
+package:
+    name: renode
+    version: {{GIT_DESCRIBE_TAG}}
+
+source:
+    git_url: https://github.com/renode/renode.git
+    git_rev: master
+    patches:
+        - lower_mono_version.patch [not win]
+
+requirements:
+    build:
+        - python =2.7
+        - git
+        - automake [not win]
+        - autoconf [not win]
+        - libtool  [not win]
+        - {{ compiler('cxx') }}
+        - {{ compiler('c') }}
+        - mono [not win]
+        - gtk2 [not win]
+        - vc >=10 [win]
+    run:
+        - python =2.7
+        - glib [not win]
+        - mono [not win]
+        - gtk2 [not win]
+        - pcre [not win]
+        - cairo [not win]
+        - pango [not win]
+        - atk [not win]
+        - fontconfig [not win]
+        - robotframework
+        - netifaces
+        - requests
+        - psutil
+        - pyyaml
+
+about:
+    home: https://github.com/renode/renode
+    license: The MIT License (MIT)
+    license_file: LICENSE
