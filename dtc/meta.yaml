@@ -20,8 +20,8 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}  [linux]
-    - clang                [osx]
+    - {{ compiler('c') }}   [linux]
+    - {{ compiler('cxx') }} [osx]
     - flex
     - bison
     - pkg-config
