@@ -21,7 +21,7 @@ build:
 requirements:
   build:
    - {{ compiler('c') }}  [linux]
-   - clang 9.0.1          [osx]
+   - clang                [osx]
    - flex       [not win]
    - m2-flex     [win]
    - bison  [not win]
@@ -31,8 +31,6 @@ requirements:
    # Python bindings
    - pkg-config        [not win]
    - m2w64-pkg-config  [win]
-   - swig
-   - python {{ python }}
   host:
 #   - yaml
    - swig

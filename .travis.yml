@@ -17,8 +17,9 @@ jobs:
      - PACKAGE=dtc
    - stage: "Miscellaneus"
      os: osx
+     osx_image: xcode8.3
      env:
-     - PACKAGE=dtc      CONDA_CHANNELS=conda-forge
+     - PACKAGE=dtc
    # - stage: "Miscellaneus"
    #   os: windows
    #   env:
