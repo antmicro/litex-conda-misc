@@ -10,6 +10,7 @@ stages:
 jobs:
   include:
   # Miscellaneous
+  fast_finish: true
 
 before_install:
  - source $TRAVIS_BUILD_DIR/.travis/common.sh
