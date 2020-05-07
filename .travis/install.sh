@@ -13,10 +13,14 @@ conda config --set always_yes yes --set changeps1 no
 conda install pexpect
 conda config --add channels litex-hub
 conda config --add channels antmicro
-for CHANNEL in $CONDA_CHANNELS; do
-	conda config --add channels $CHANNEL
-done
 conda config --add channels $(echo $TRAVIS_REPO_SLUG | sed -e's@/.*$@@')
+
+if [ -e $PACKAGE/condarc_$TRAVIS_OS_NAME ]; then
+	export CONDARC=$PACKAGE/condarc_$TRAVIS_OS_NAME
+elif [ -e $PACKAGE/condarc ]; then
+	export CONDARC=$PACKAGE/condarc
+fi
+
 #conda clean -s --dry-run
 conda build purge
 #conda clean -s --dry-run

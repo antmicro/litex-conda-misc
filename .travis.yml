@@ -14,7 +14,7 @@ jobs:
       os: linux
       dist: xenial
       env:
-      - PACKAGE=sigrok-cli   CONDA_CHANNELS="conda-forge litex-hub"
+      - PACKAGE=sigrok-cli
   fast_finish: true
 
 before_install:
