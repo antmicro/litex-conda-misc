@@ -21,9 +21,16 @@ elif [ -e $PACKAGE/condarc ]; then
 	export PACKAGE_CONDARC=$PACKAGE/condarc
 fi
 
-# Set package's condarc as the global configuration file
 if [ -e $PACKAGE_CONDARC ]; then
-	cp $PACKAGE_CONDARC $CONDA_PATH/condarc
+	# Slightly decrease priority of the settings made with 'conda config'
+	if [ ! -d ~/.conda ]; then
+		mkdir ~/.conda
+	fi
+	mv ~/.condarc ~/.conda/.condarc
+
+	# Use package's condarc as the most important one for 'conda build'
+	# (only environment's condarc could be more important)
+	cp $PACKAGE_CONDARC ~/.condarc
 fi
 
 #conda clean -s --dry-run
