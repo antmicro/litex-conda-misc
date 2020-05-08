@@ -16,15 +16,14 @@ conda config --add channels antmicro
 conda config --add channels $(echo $TRAVIS_REPO_SLUG | sed -e's@/.*$@@')
 
 if [ -e $PACKAGE/condarc_$TRAVIS_OS_NAME ]; then
-	export CONDARC=$PACKAGE/condarc_$TRAVIS_OS_NAME
+	export PACKAGE_CONDARC=$PACKAGE/condarc_$TRAVIS_OS_NAME
 elif [ -e $PACKAGE/condarc ]; then
-	export CONDARC=$PACKAGE/condarc
+	export PACKAGE_CONDARC=$PACKAGE/condarc
 fi
 
-# The CONDARC variable seems to be ignored by the conda-build
-# Therefore, it is used as the global configuration file
-if [ -e $CONDARC ]; then
-	cp $CONDARC $CONDA_PATH/condarc
+# Set package's condarc as the global configuration file
+if [ -e $PACKAGE_CONDARC ]; then
+	cp $PACKAGE_CONDARC $CONDA_PATH/condarc
 fi
 
 #conda clean -s --dry-run

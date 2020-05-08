@@ -29,7 +29,7 @@ if [ ! -z "${TOOLCHAIN_ARCH}" ]; then
 EOF
 fi
 
-if [ -e $CONDARC ]; then
+if [ -e $PACKAGE_CONDARC ]; then
 	echo '  condarc:' >> $PACKAGE/recipe_append.yaml
-	cat $CONDARC | sed -e's/^/    /' >> $PACKAGE/recipe_append.yaml
+	cat $PACKAGE_CONDARC | sed -e's/^/    /' >> $PACKAGE/recipe_append.yaml
 fi
