@@ -21,6 +21,12 @@ elif [ -e $PACKAGE/condarc ]; then
 	export CONDARC=$PACKAGE/condarc
 fi
 
+# The CONDARC variable seems to be ignored by the conda-build
+# Therefore, it is used as the global configuration file
+if [ -e $CONDARC ]; then
+	cp $CONDARC $CONDA_PATH/condarc
+fi
+
 #conda clean -s --dry-run
 conda build purge
 #conda clean -s --dry-run

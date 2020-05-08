@@ -30,5 +30,6 @@ EOF
 fi
 
 if [ -e $CONDARC ]; then
-        cat $CONDARC | sed -e's/^/  /' >> $PACKAGE/recipe_append.yaml
+        echo '  condarc:' >> $PACKAGE/recipe_append.yaml
+        cat $CONDARC | sed -e's/^/    /' >> $PACKAGE/recipe_append.yaml
 fi
