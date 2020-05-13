@@ -1,3 +1,4 @@
+# Due to the 'channel_priority: strict', litex-hub has to be the first channel
 channels:
  - litex-hub
  - conda-forge
