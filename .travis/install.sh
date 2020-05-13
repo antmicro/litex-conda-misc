@@ -21,7 +21,7 @@ elif [ -e $PACKAGE/condarc ]; then
 	export PACKAGE_CONDARC=$PACKAGE/condarc
 fi
 
-if [ -e $PACKAGE_CONDARC ]; then
+if [ -e "$PACKAGE_CONDARC" ]; then
 	# Slightly decrease priority of the settings made with 'conda config'
 	if [ ! -d ~/.conda ]; then
 		mkdir ~/.conda
