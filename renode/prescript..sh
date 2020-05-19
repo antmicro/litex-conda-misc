@@ -10,7 +10,7 @@ mv renode/tools/packaging/conda/* .
 rm -rf renode
 rm README.rst
 
-# Make Travis-specific changes to the recipe
+# Patch the recipe
 function patch-func {
     if ! patch --no-backup-if-mismatch "$1" "$2"; then
         # Print the rejected part of the diff
@@ -18,10 +18,16 @@ function patch-func {
         exit -1
     fi
 }
+
+# Add Travis-specific patches for Renode repository files
+patch-func meta.yaml meta_add_travis_patches.patch
+
+# Build headless Renode on Linux and macOS (there's no Conda package with GtkSharp)
+patch-func meta.yaml meta_headless_linux_and_osx.patch
 patch-func build.sh build_without_gui.patch
-patch-func meta.yaml meta_modifications.patch
 
 # Clean the recipe
+rm meta_add_travis_patches.patch
+rm meta_headless_linux_and_osx.patch
 rm build_without_gui.patch
-rm meta_modifications.patch
 rm prescript..sh
