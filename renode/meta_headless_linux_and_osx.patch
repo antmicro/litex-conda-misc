@@ -4,22 +4,12 @@
  package:
 -    name: renode
 +    name: renode          [win]
-+    # Required GTK C# libraries can't be provided from packages
++    # GtkSharp libraries can't be provided through Conda
 +    name: renode-headless [not win]
      version: {{GIT_DESCRIBE_TAG}}
  
  source:
-@@ -7,6 +9,9 @@
-     git_rev: master
-     patches:
-         - lower_mono_version.patch [not win]
-+        # Travis-specific patches
-+        - osx_mono_name.patch      [osx]
-+        - win_msbuild_params.patch [win]
- 
- build:
-     missing_dso_whitelist:
-@@ -24,19 +29,13 @@
+@@ -27,19 +29,13 @@
          - autoconf       [not win]
          - libtool        [not win]
          - mono           [not win]
