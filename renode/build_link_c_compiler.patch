@@ -1,0 +1,17 @@
+--- /home/adam/renode-hq/renode/tools/packaging/conda/build.sh
++++ /home/adam/renode-hq/renode/tools/packaging/conda/build.sh
+@@ -3,6 +3,14 @@
+ set -x
+ 
+ if [[ "$(uname)" == 'Linux' ]]; then
++    ln -s $GCC $BUILD_PREFIX/bin/gcc
++    ln -s $GCC_AR $BUILD_PREFIX/bin/ar
++else
++    ln -s $CLANG $BUILD_PREFIX/bin/clang
++    ln -s $AR $BUILD_PREFIX/bin/ar
++fi
++
++if [[ "$(uname)" == 'Linux' ]]; then
+     install -D /usr/bin/realpath $BUILD_PREFIX/bin/realpath
+     install -D /bin/sed $BUILD_PREFIX/bin/sed
+ 

@@ -22,6 +22,9 @@ function patch-func {
 # Add Travis-specific patches for Renode repository files
 patch-func meta.yaml meta_add_travis_patches.patch
 
+# Test
+patch-func build.sh build_link_c_compiler.patch
+
 # Build headless Renode on Linux and macOS (there's no Conda package with GtkSharp)
 patch-func meta.yaml meta_headless_linux_and_osx.patch
 patch-func build.sh build_without_gui.patch
