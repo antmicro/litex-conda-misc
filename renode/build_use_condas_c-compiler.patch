@@ -1,0 +1,27 @@
+--- tools/packaging/conda/build.sh
++++ tools/packaging/conda/build.sh
+@@ -2,6 +2,24 @@
+ 
+ set -x
+ 
++# Use C compiling toolchain provided by Conda
++# HOST variable is introduced by gcc/clang packages and every compiling tool's name starts with it
++if [[ "$(uname)" == 'Linux' ]]; then
++    PROPERTIES_CSPROJ=$SRC_DIR/src/Infrastructure/src/Emulator/Cores/linux-properties.csproj
++    CONDA_COMPILER_NAME="${HOST}-gcc"
++else
++    PROPERTIES_CSPROJ=$SRC_DIR/src/Infrastructure/src/Emulator/Cores/osx-properties.csproj
++    CONDA_COMPILER_NAME="${HOST}-clang"
++fi
++
++sed -i.bak "s/<CompilerPath>.*<\/CompilerPath>/<CompilerPath>${CONDA_COMPILER_NAME}<\/CompilerPath>/g" $PROPERTIES_CSPROJ
++sed -i.bak "s/<LinkerPath>.*<\/LinkerPath>/<LinkerPath>${CONDA_COMPILER_NAME}<\/LinkerPath>/g" $PROPERTIES_CSPROJ
++sed -i.bak "s/<ArPath>.*<\/ArPath>/<ArPath>${HOST}-ar<\/ArPath>/g" $PROPERTIES_CSPROJ
++sed -i.bak "s/gcc -I/${CONDA_COMPILER_NAME} -I/g" $SRC_DIR/tools/building/check_weak_implementations.sh
++
++unset PROPERTIES_CSPROJ CONDA_COMPILER_NAME
++
++
+ if [[ "$(uname)" == 'Linux' ]]; then
+     install -D /usr/bin/realpath $BUILD_PREFIX/bin/realpath
+     install -D /bin/sed $BUILD_PREFIX/bin/sed

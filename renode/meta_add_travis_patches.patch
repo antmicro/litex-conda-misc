@@ -1,14 +1,12 @@
 --- meta.yaml
 +++ meta.yaml
-@@ -7,6 +7,11 @@
+@@ -7,6 +7,9 @@
      git_rev: master
      patches:
          - lower_mono_version.patch [not win]
 +        # Travis-specific patches
 +        - osx_mono_name.patch      [osx]
 +        - win_msbuild_params.patch [win]
-+        - linux_gcc_bin.patch
-+        - osx_gcc_bin.patch
  
  build:
      missing_dso_whitelist:
