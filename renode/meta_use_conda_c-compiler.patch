@@ -1,0 +1,12 @@
+--- tools/packaging/conda/meta.yaml
++++ tools/packaging/conda/meta.yaml
+@@ -6,6 +6,9 @@
+     git_url: https://github.com/renode/renode.git
+     git_rev: master
+     patches:
++        - linux_use_conda_c-compiler.patch [linux]
++        - osx_use_conda_c-compiler.patch   [osx]
++        - win_use_conda_c-compiler.patch   [win]
+         - lower_mono_version.patch [not win]
+ 
+ build:
