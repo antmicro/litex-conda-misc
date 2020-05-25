@@ -16,10 +16,6 @@ jobs:
       env:
       - PACKAGE=renode
     - stage: "Miscellaneous"
-      os: windows
-      env:
-      - PACKAGE=renode
-    - stage: "Miscellaneous"
       os: osx
       osx_image: xcode8.3
       env:
